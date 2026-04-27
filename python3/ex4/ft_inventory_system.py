@@ -3,7 +3,7 @@
 import sys
 
 
-def parse_inventory(args) -> dict[str, int]:
+def parse_inventory(args: list[str]) -> dict[str, int]:
     inventory = {}
     for arg in args:
         if ':' not in arg:
@@ -15,6 +15,8 @@ def parse_inventory(args) -> dict[str, int]:
             continue
         try:
             qty = int(qty_str)
+            if (qty <= 0):
+                raise (ValueError)
         except ValueError as e:
             print(f"Quantity error for '{item}': {e}")
             continue
@@ -22,7 +24,7 @@ def parse_inventory(args) -> dict[str, int]:
     return inventory
 
 
-def display_inventory(inventory):
+def display_inventory(inventory: dict[str, int]) -> None:
     print(f"Got inventory: {inventory}")
     items = list(inventory.keys())
     print(f"Item list: {items}")
@@ -41,7 +43,7 @@ def display_inventory(inventory):
     print(f"Updated inventory: {inventory}")
 
 
-def main():
+def main() -> None:
     print("=== Inventory System Analysis ===")
     if len(sys.argv) < 2:
         print("Usage: python3 ft_inventory_system.py "

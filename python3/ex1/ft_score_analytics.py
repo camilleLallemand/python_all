@@ -4,7 +4,8 @@ import sys
 def score_analytics() -> None:
     if len(sys.argv) < 2:
         print(
-            "No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+            "No scores provided. Usage: "
+            "python3 ft_score_analytics.py <score1> <score2> ...")
         return
     score = []
     for arg in sys.argv[1:]:
@@ -14,7 +15,8 @@ def score_analytics() -> None:
             print(f"Invalid parameter: '{arg}'")
     if len(score) == 0:
         print(
-            "No scores provided. Usage: python3 ft_score_analytics.py <score1> <score2> ...")
+            "No scores provided. Usage: python3"
+            " ft_score_analytics.py <score1> <score2> ...")
         return
     total_players = len(score)
     total_score = round(sum(score))

@@ -1,7 +1,7 @@
 import random
 
 
-def main():
+def main() -> None:
     print("=== Game Data Alchemist ===")
 
     players = ['Alice', 'bob', 'Charlie', 'dylan',

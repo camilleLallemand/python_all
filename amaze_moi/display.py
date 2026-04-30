@@ -33,9 +33,9 @@ SCHEMES: list[ColorScheme] = [
     ColorScheme("Neon", ansi("95"), ansi("90"), ansi("96"),
                 ansi("91"), ansi("92"), ansi("93")),
     ColorScheme("Ice", ansi("94"), ansi("37"), ansi("96"),
-                ansi("97"), ansi("34"), ansi("36")),
+                ansi("97"), ansi("91"), ansi("36")),
     ColorScheme("Lava", ansi("31"), ansi("90"), ansi("93"),
-                ansi("97"), ansi("91"), ansi("33")),
+                ansi("97"), ansi("34"), ansi("33")),
     ColorScheme("Forest", ansi("32"), ansi("90"), ansi("93"),
                 ansi("91"), ansi("97"), ansi("33")),
 ]
@@ -59,7 +59,7 @@ CELL_CHAR: dict[CellStatus, str] = {
 
 
 def place_42(maze: Maze) -> None:
-    if maze.width < PAT_W or maze.height < PAT_H:
+    if maze.width < PAT_W or maze.height < PAT_H + 1:
         print(f"[42] Maze too small — pattern skipped (min {PAT_W}x{PAT_H}).")
         maze.forty = False
         return

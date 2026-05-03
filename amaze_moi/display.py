@@ -109,6 +109,10 @@ def render(maze: Maze, scheme: ColorScheme) -> str:
 def display(maze: Maze, scheme: ColorScheme) -> None:
     os.system("clear")
     print("  [D] Theme  [R] Regenerate  [P] Path  [Q] Quit\n")
+    if (maze.forty):
+        print("Forty is real, rush b")
+    else:
+        print("      Forty statut: Cykq BLYAT no forty here\n")
     print(render(maze, scheme))
 
 

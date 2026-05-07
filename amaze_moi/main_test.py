@@ -9,9 +9,9 @@ def build_maze() -> tuple[Maze, MazeGenerator]:
     x_start = 1
     y_start = 0
     x_end = 0
-    y_end = 5
+    y_end = 1
     maze = Maze(
-        width=10, height=6, seed=110, perfect=True,
+        width=10, height=2, seed=110, perfect=True,
         entry=(x_start, y_start), end=(x_end, y_end), out_file="maze.txt",
     )
     if ((x_end == x_start and y_end == y_start)
